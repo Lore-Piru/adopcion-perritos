@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="img/iconoPage.ico">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='https://kit.fontawesome.com/a076d05399.js' crossorigin='anonymous'></script>
+    <title>¡Perritos en adopción!</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #fef3c7;
+            color: #411d09;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            background-color: #fef3c783;
+            transition: all 0.3s;
+        }
+        header.scrolled {
+            background-color: #92400e;
+            color: #fef3c7;
+        }
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+        .menu {
+            display: none;
+        }
+        .menu a {
+            color: inherit;
+            text-decoration: none;
+            margin-left: 1rem;
+        }
+        .menu-button {
+            display: none;
+            background: none;
+            border: none;
+            color: inherit;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        main section {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: 5rem 1rem;
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .text {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .image {
+            width: 100%;
+            max-width: 400px;
+            height: auto;
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        @media (min-width: 768px) {
+            .menu {
+                display: flex;
+            }
+            .menu-button {
+                display: none;
+            }
+            .content {
+                flex-direction: row;
+            }
+            .text {
+                width: 50%;
+                text-align: left;
+                padding-right: 2rem;
+            }
+            .image {
+                width: 50%;
+            }
+            .reverse {
+                flex-direction: row-reverse;
+            }
+            .reverse .text {
+                padding-right: 0;
+                padding-left: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav>
+            <div class="logo">¡Perritos en adopción!</div>
+            <div class="menu">
+                <a href="#home" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/casa-de-perro.png" alt="Casa de perro" width="48" height="48">
+                    <span>Inicio</span>
+                </a>
+                <a href="#adopcion" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/icono_donar.png" alt="Icono de donación" width="48" height="48">
+                    <span>Adoptar</span>
+                </a>
+                <a href="#jovenes-mia" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Mia 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Mia</span>
+                </a>
+                <a href="#jovenes-mia" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Rua 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Rua</span>
+                </a>
+                <a href="#jovenes-mia" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Zoe 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Zoe</span>
+                </a>
+                <a href="#Tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Tina (1).jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Tina</span>
+                </a>
+                <a href="#jovenes-tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Claire Redfield 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Claire</span>
+                </a>
+                <a href="#jovenes-tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Jill Valentine 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Jill</span>
+                </a>
+                <a href="#jovenes-tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Manchita 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Manchita</span>
+                </a>
+                <a href="#Beto" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Beto 2.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Beto</span>
+                </a>
+                <a href="#Cara" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Cara 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Cara</span>
+                </a>
+                <a href="#Osita" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
+                    <img src="img/Osita 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <span>Osita</span>
+                </a>
+            </div>
+            <button class="menu-button">☰</button>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home" style="background-image: url('img/foto_grupal_editada.png')">
+            <div class="container">
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Perritos en adopción!</h2>
+                                <p>Debido a razones de salud y con mucho dolor debemos dar en adopción a las siguientes mascotas.</p>
+                                <p>Algunas de ellas son jóvenes, otros, viejos y con problemas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/foto_grupal (7).jpg" alt="Perro en otoño" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Si estas leyendo esto espero, de corazón, que su edad no sea un impedimento para darles el amor que tanto se merecen.</p>
+                                <p>Estos animales fueron rescatados de la calle, pasaron situaciones muy difíciles y queremos que tengan una vida digna.</p>
+                    </div>
+                </div>
+                    </div>
+                    <img src="img/foto_grupal.jpg" alt="Perro jugando" class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="adopcion" style="background-image: url('img/Cara\ 5.jpg');">
+            <div class="container">
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                        <p>Cada uno de estos 10 peluditos tiene una historia única que contar. Algunos son jóvenes y llenos de energía, otros han vivido experiencias difíciles pero aún conservan su dulzura. Lo que todos ellos tienen en común es un anhelo profundo de amor y un nuevo hogar donde sentirse seguros. Al adoptar a uno de ellos, no solo le estarás brindando una segunda oportunidad, sino que también te llenarás de la alegría y la lealtad que solo un perro puede ofrecer. Recuerda, la edad o las condiciones físicas no definen el amor que pueden dar.</p>
+                    </div>
+                </div>
+                    </div>
+                    <img src="img/foto_grupal (8).jpg" alt="Perro jugando" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Para más información, contáctanos por WhatsApp o Telegram a los siguientes números:</p>
+                                <p><a href="https://wa.link/ed29ua">Luna:</a> 11 6934-8464</p>
+                                <p><a href="https://wa.link/civao4">Patricia:</a> 11 6535-0345</p>
+                                <p><a href="https://wa.link/4ovnxb">Natalia:</a> 11 6533-3429</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Cara 2.jpg" alt="Perro en otoño" class="image">
+                </div>
+        </section>
+
+        <section id="Beto" style="background-image: url('img/Beto\ 1.jpg');">
+            <div class="container">
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Beto!</h2>
+                                <p>Ciego, tonto, sordo pero no mudo, le falta un ojo, casi no oye, tiene quistes y ladra mucho para llamar tu atención. Aun así, Beto es uno de los perros más dulces que podrías conocer, llegando a adoptar cachorros recién nacidos y cuidarlos como si fuesen suyos, un verdadero papa luchón.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Beto 2.jpg" alt="Beto foto 1" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Rescatado en 2011, dado en adopción a un hombre violento, perdiendo su ojo en el proceso, vuelto a rescatar de nuevo, a pesar de su dura vida y a sus 14 años, Beto no carece de amor y confía en los humanos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Beto 3.jpg" alt="Beto foto 2" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Le encanta jugar, no es tan guardián como los demás pero su compañía no pasa desapercibida, ama estar tanto con adultos como con niños, puede coexistir con gatos y perros.</p>
+                            </div>
+                        </div> 
+                    </div>
+                    <img src="img/Beto 4.jpg" alt="Beto foto 3" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Aunque es territorial y suele pelearse con otros perros machos, tiene mejor relación con las hembras. Además padece de un bulto en una de sus patas y no es extirpable debido a su vejez.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Beto 5.jpg" alt="Beto foto 4" class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="Cara" style="background-image: url('img/Cara\ 4.jpg');">
+            <div class="container">
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Cara!</h2>
+                                <p>Tiene 15 años, fue encontrada en un pozo en 2010 con 2 meses de edad aproximadamente, desde siempre fue super guardiana y agradecida con quienes le salvaron su vida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Cara 1.jpg" alt="Cara foto 1" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Le falta su cola por razones que desconocemos y en su lugar tiene un rabo de conejo.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Cara 2.jpg" alt="Cara foto 2" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Super amorosa, pero con carácter, puede convivir tanto con gatos como perros, aunque no con gatos bebes ya que es capaz de lastimarlos, no le gustan los niños, aun así es muy dócil.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Cara 3.jpg" alt="Cara foto 3" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Demanda su atención con ladridos dulces y posicionando su patita en tu regazo, no tiene mayores problemas de salud más que un ligero sobrepeso</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Cara 5.jpg" alt="Cara foto 4" class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="Osita" style="background-image: url('img/Osita\ 4.jpg');">
+            <div class="container">
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Osita!</h2>
+                                <p>Fue encontrada debajo de un arbusto, escondida detrás de su madre, la única que sobrevivió de sus hermanos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Osita 1.jpg" alt="Osita foto 1" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Es muy sensible, a pesar de haber sido rescatada en 2013 y con 9 años de edad, aún tiene miedo a las personas que no conoce, requiere de paciencia y su amor puede ser malinterpretado, muerde a aquellos a quienes considera una amenaza. Dentro de su miedo hace todo lo puede por proteger la casa, es super dulce una vez superado ese miedo, por estas razones no debe estar cerca de niños o gatos bebes ya que puede lastimarlos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Osita 2.jpg" alt="Osita foto 2" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Osita ya tiene problemas de cadera y esta medicada, padece de sobrepeso y hace tiempo que estamos trabajando en una dieta para que baje unos kilos, no es fácil, requiere de mucha atención</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Osita 3.jpg" alt="Osita foto 3" class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="Tina" style="background-image: url('img/Tina\ \(7\).jpg');">
+            <div class="container">
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Tina!</h2>
+                                <p>Podríamos estar todo el día tratando de explicar las exóticas facciones de Tina, así que preferimos saltearnos esa parte e ir directo a lo mas importante, Tina tuvo una vida muy dura.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Tina (2).jpg" alt="Tina foto 1" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Fue abandonada en la ruta durante años, fue madre muchas veces, nadie la quería, su “familia” no la cuidaba, no sabemos su edad y algunas cosas de ella son un misterio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Tina (4).jpg" alt="Tina foto 2" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>A pesar de su trágica vida, confía en los humanos, es amorosa, educada, le encantan los mimos, es una super mama.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Tina (6).jpg" alt="Tina foto 3" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Se lleva bien con gatos, perros, niños por igual y cuida de todos ellos como si fuesen sus hijos. La última camada de cachorros que tuvo antes de ser adoptada y castrada también se encuentran en adopción</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Tina (7).jpg" alt="Tina foto 4" class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="jovenes-tina" style="background-image: url('img/foto_grupal\ \(3\).jpg');">
+            <div class="container">
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Los hijos de Tina!</h2>
+                                <p>Los hijos de tina, con 4 años de edad, nacidos en pandemia estos 4 hermanos comparten características en común, tales como morder cosas, un exceso de confianza en los seres humanos, no son guardianes y les encanta estar arriba de la cama o a upa, no toleran estar solos y padecen de ansiedad cuando es el caso, llevándolos a masticar lo que sea que este a su alcance, aun así, cada uno de ellos tiene una personalidad única y encantadora.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/foto_grupal (6).jpg" alt="Foto grupal hijos de Tina" class="image">
+                </div>
+                <br>
+                <div class="content">
+                    <img src="img/Jill Valentine 2.jpg" alt="Jill foto 1" class="image">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Jill Valentine!</h2>
+                                <p>Pomposa y ágil, muy parecida a su hermana Claire, aunque más juguetona y activa, Jill se parece a su madre en cuanto a su mandíbula corrida de lugar y pelaje, con sus 10kg, sociable, le gusta estar con gatos, es una perfecta compañera para estar con niños.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Jill Valentine 4.jpg" alt="Jill foto 2" class="image">
+                </div>
+                <br>
+                <div class="content reverse">
+                    <img src="img/Manchita 2.jpg" alt="Manchita foto 1" class="image">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Manchita!</h2>
+                                <p>El más pequeño de todos, y seguramente el más bueno, tierno, dulce, sociable, educado, Manchita no le dejo ninguna virtud a sus hermanos y se las quedo todas para él, pero eso implica que requiere mucho más amor que sus hermanos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Manchita 3.jpg" alt="Manchita foto 2" class="image">
+                </div>
+                <br>
+                <div class="content">
+                    <img src="img/Claire Redfield 2.jpg" alt="Claire foto 1" class="image">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Claire Redfield!</h2>
+                                <p>Miedosa, amorosa, se sienta a tu lado y espera a que le hagas mimos, de forma gentil te empuja con su hocico, no es territorial, pero si celosa, quiere todos los mismo para ella y se derrite cuando le haces upa, fanática de dormir en la cama, al igual que sus hermanos no padece de problemas de salud.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Claire Redfield 3.jpg" alt="Claire foto 2" class="image">
+                </div>
+            </div>
+        </section>
+
+        <section id="jovenes-mia" style="background-image: url('img/Mia\ 5.jpg');">
+            <div class="container">
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Mia y sus bellezas!</h2>
+                                <p>Como hizo para tener hijas tan bellas, no lo sabemos, lo que si sabemos es que esta madre y sus hijas son guardianas de primera mano, al igual que compañeras, inteligentes y juguetonas.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Mia 2.jpg" alt="Tina foto 2" class="image">
+                </div>
+                <div class="content">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Tienden a morder a las personas a sus dueños a modo de juego y cariño, pero si desconfían de alguien no van a dudar de morder en serio.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Mia 4.jpg" alt="Tina foto 3" class="image">
+                </div>
+                <div class="content reverse">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <p>Mia particularmente es dócil, sobrevivió a un moquillo que no presento síntomas, pero su hermana murió de esta misma enfermedad.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Mia 5.jpg" alt="Tina foto 4" class="image">
+                </div>
+                <br>
+                <div class="content">
+                    <img src="img/Zoe 2.jpg" alt="Zoe foto 1" class="image">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Zoe!</h2>
+                                <p>Con 4 años de edad, dulce, traviesa, super compañera, no padece problemas de salud y guardiana, le encanta estar con personas y llamar la atención con sus mordiscos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Zoe 3.jpg" alt="Zoe foto 2" class="image">
+                </div>
+                <br>
+                <div class="content reverse">
+                    <img src="img/Rua 2.jpg" alt="Rua foto 1" class="image">
+                    <div class="text">
+                        <div class="card">
+                            <div class="card-body">
+                                <h2>¡Rua!</h2>
+                                <p>El más pequeño de todos, y seguramente el más bueno, tierno, dulce, sociable, educado, Manchita no le dejo ninguna virtud a sus hermanos y se las quedo todas para él, pero eso implica que requiere mucho más amor que sus hermanos.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="img/Rua 4.jpg" alt="Rua foto 2" class="image">
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        // Cambiar el color del header al hacer scroll
+        window.addEventListener('scroll', function() {
+            var header = document.querySelector('header');
+            header.classList.toggle('scrolled', window.scrollY > 0);
+        });
+
+        // Menú móvil
+        var menuButton = document.querySelector('.menu-button');
+        var menu = document.querySelector('.menu');
+        menuButton.addEventListener('click', function() {
+            menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Cerrar menú al hacer clic en un enlace (para móviles)
+        var menuLinks = document.querySelectorAll('.menu a');
+        menuLinks.forEach(function(link) {
+            link.addEventListener('click', function() {
+                if (window.innerWidth < 768) {
+                    menu.style.display = 'none';
+                }
+            });
+        });
+
+        // Ajustar menú al cambiar el tamaño de la ventana
+        window.addEventListener('resize', function() {
+            if (window.innerWidth >= 768) {
+                menu.style.display = 'flex';
+            } else {
+                menu.style.display = 'none';
+            }
+        });
+    </script>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>   
+
+    <script src="https://cdn.jsdelivr.net/npm/react-dom@18/umd/react-dom.development.js"></script>
+    <script src="index.js"></script>
+</body>
+</html>
