@@ -38,7 +38,7 @@
             max-width: 1200px;
             margin: 0 auto;
         }
-        .logo {
+        .titulo {
             font-size: 1.5rem;
             font-weight: bold;
         }
@@ -113,12 +113,39 @@
                 padding-left: 2rem;
             }
         }
+        /* Estilos para dispositivos móviles */
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+                flex-direction: column;
+            }
+
+            .menu.active {
+                display: flex;
+            }
+
+            .menu-button {
+                display: block;
+                position: absolute;
+                top: 1rem;
+                right: 1rem;
+            }
+
+            .titulo {
+                display: block;
+            }
+
+            .menu.active + .titulo {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
         <nav>
-            <div class="logo">¡Perritos en adopción!</div>
+            <div class="titulo">¡Perritos en adopción!</div>
+            <button class="menu-button" aria-label="Abrir menú">☰</button>
             <div class="menu">
                 <a href="#home" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
                     <img src="img/casa-de-perro.png" alt="Casa de perro" width="48" height="48">
@@ -129,47 +156,46 @@
                     <span>Adoptar</span>
                 </a>
                 <a href="#jovenes-mia" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Mia 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Mia 1.jpg" alt="Mia" width="48" height="48">
                     <span>Mia</span>
                 </a>
                 <a href="#jovenes-mia" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Rua 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Rua 1.jpg" alt="Rua" width="48" height="48">
                     <span>Rua</span>
                 </a>
                 <a href="#jovenes-mia" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Zoe 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Zoe 1.jpg" alt="Zoe" width="48" height="48">
                     <span>Zoe</span>
                 </a>
                 <a href="#Tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Tina (1).jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Tina (1).jpg" alt="Tina" width="48" height="48">
                     <span>Tina</span>
                 </a>
                 <a href="#jovenes-tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Claire Redfield 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Claire Redfield 1.jpg" alt="Claire" width="48" height="48">
                     <span>Claire</span>
                 </a>
                 <a href="#jovenes-tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Jill Valentine 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Jill Valentine 1.jpg" alt="Jill" width="48" height="48">
                     <span>Jill</span>
                 </a>
                 <a href="#jovenes-tina" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Manchita 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Manchita 1.jpg" alt="Manchita" width="48" height="48">
                     <span>Manchita</span>
                 </a>
                 <a href="#Beto" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Beto 2.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Beto 2.jpg" alt="Beto" width="48" height="48">
                     <span>Beto</span>
                 </a>
                 <a href="#Cara" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Cara 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Cara 1.jpg" alt="Cara" width="48" height="48">
                     <span>Cara</span>
                 </a>
                 <a href="#Osita" class="flex items-center space-x-2 text-gray-600 hover:text-gray-900">
-                    <img src="img/Osita 1.jpg" alt="Icono de donación" width="48" height="48">
+                    <img src="img/Osita 1.jpg" alt="Osita" width="48" height="48">
                     <span>Osita</span>
                 </a>
             </div>
-            <button class="menu-button">☰</button>
         </nav>
     </header>
 
@@ -511,7 +537,7 @@
                         <div class="card">
                             <div class="card-body">
                                 <h2>¡Rua!</h2>
-                                <p>El más pequeño de todos, y seguramente el más bueno, tierno, dulce, sociable, educado, Manchita no le dejo ninguna virtud a sus hermanos y se las quedo todas para él, pero eso implica que requiere mucho más amor que sus hermanos.</p>
+                                <p>A diferencia de su hermana, Rua es mas tímida, parecida a osita, muy guardiana pero miedosa, de perfil bajo, pero muy guardiana y dispuesta a defender a su familia, tampoco tiene problemas de salud y es muy activa.</p>
                             </div>
                         </div>
                     </div>
@@ -531,8 +557,10 @@
         // Menú móvil
         var menuButton = document.querySelector('.menu-button');
         var menu = document.querySelector('.menu');
+        var titulo = document.querySelector('.titulo');
         menuButton.addEventListener('click', function() {
             menu.style.display = menu.style.display === 'flex' ? 'none' : 'flex';
+            titulo.style.display = titulo.style.display === 'none' ? 'block' : 'none';
         });
 
         // Cerrar menú al hacer clic en un enlace (para móviles)
@@ -553,6 +581,7 @@
                 menu.style.display = 'none';
             }
         });
+        
     </script>
     <div id="root"></div>
     <script src="https://cdn.jsdelivr.net/npm/react@18/umd/react.development.js"></script>   
